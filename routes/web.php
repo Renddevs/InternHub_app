@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pendaftaran_page', function(){
+    return view('mahasiswa.daftar_kp');
+});
