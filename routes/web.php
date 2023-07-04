@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/pendaftaran_page', function(){
     return view('mahasiswa.daftar_kp');
 });
+
+Route::get('/login_page', function(){
+    return view('login');
+});
