@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mst_mahasiswa', function (Blueprint $table) {
+        Schema::create('mst_dosen', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('id_user');
             $table->uuid('id_ref_prodi');
-            $table->string('npm');
             $table->string('firstname');
             $table->string('lastname');
             $table->string('create_by');
-            $table->datetime('created_at');
-            $table->string('update_by')->nullable();
-            $table->datetime('updated_at')->nullable();
+            $table->datetime('created_date');
+            $table->string('update_by');
+            $table->datetime('updated_date');
             $table->foreign('id_user')->references('id')->on('user');
             $table->foreign('id_ref_prodi')->references('id')->on('ref_prodi');
         });
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mst_mahasiswa');
+        Schema::dropIfExists('mst_dosen');
     }
 };
