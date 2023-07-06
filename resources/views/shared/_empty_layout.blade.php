@@ -26,6 +26,7 @@
         background-color: #f5f7ff;
     }
   </style>
+  @yield('custom-style')
 </head>
 <body>
   <div class="container-scroller">

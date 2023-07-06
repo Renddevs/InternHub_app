@@ -24,3 +24,7 @@ Route::get('/pendaftaran_page', function(){
 Route::get('/login_page', function(){
     return view('login');
 });
+
+Route::get('/email_pembayaran', function(){
+    return view('email.app_pembayaran');
+});
