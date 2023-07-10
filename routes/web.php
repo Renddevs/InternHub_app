@@ -28,3 +28,7 @@ Route::get('/login_page', function(){
 Route::get('/email_pembayaran', function(){
     return view('email.app_pembayaran');
 });
+
+Route::get('/tambah_tempat_kp_page', function(){
+    return view('mahasiswa.pengajuan_tempat_kp');
+});
