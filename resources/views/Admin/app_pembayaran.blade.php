@@ -31,3 +31,9 @@
     </div>
 </div>
 @endsection
+
+@include('Admin.Modal._mdl_detail_pembayaran')
+
+@section('javascript_section')
+<script src="{{ asset('page/Admin/app_pembayaran.js') }}"></script>
+@endsection

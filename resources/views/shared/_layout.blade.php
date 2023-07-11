@@ -356,6 +356,7 @@
   <!-- Custom js for this page-->
   <script src="{{ asset('js/dashboard.js') }}"></script>
   <script src="{{ asset('js/Chart.roundedBarCharts.js') }}"></script>
+  @yield('javascript_section');
   <!-- End custom js for this page-->
 </body>
 
