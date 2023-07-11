@@ -8,10 +8,10 @@
                 <h4 class="card-title">List Perusahaan</h4>
                 <p class="card-description">Daftar perusahaan yang diajukan sebagai tempat kerja praktek.</p>
                 <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table id="" class="display expandable-table" style="width: 100%;" role="grid">
                         <thead>
-                            <tr>
-                                <th>#</th>
+                            <tr role="row">
+                                <th aria-label="#">#</th>
                                 <th>Nama Perusahaan</th>
                                 <th>Penanggung Jawab</th>
                                 <th>Email</th>
