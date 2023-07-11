@@ -5,7 +5,14 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">List Perusahaan</h4>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <h4 class="card-title">List Perusahaan</h4>
+                    </div>
+                    <div class="col-md-6 col-sm-12 d-flex justify-content-end">
+                        <button class="btn btn-sm btn-primary font-weight-bold" style="" onclick="showMdlTambahTempat()"><span style="font-size: 20px;">+</span> Tambah</button>
+                    </div>
+                </div>
                 <p class="card-description">Daftar perusahaan yang diajukan sebagai tempat kerja praktek.</p>
                 <div class="table-responsive">
                     <table id="" class="display expandable-table" style="width: 100%;" role="grid">
@@ -61,6 +68,12 @@
         </div>
       </div>
 </div>
+@endsection
+
+@include('Mahasiswa.Modal._mdlTambahTempat')
+
+@section('javascript_section')
+<script src="{{ asset('page/Mahasiswa/pengajuan_tempat_kp.js') }}"></script>
 @endsection
 
 
