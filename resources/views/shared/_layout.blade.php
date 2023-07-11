@@ -296,15 +296,21 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/documentation/documentation.html">
-              <i class="icon-paper menu-icon"></i>
+            <a class="nav-link" href="/tambah_tempat_kp_page">
+              <i class="icon-briefcase menu-icon"></i>
               <span class="menu-title">Tempat Kerja Praktek</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app_pembayaran_page">
+              <i class="icon-book menu-icon"></i>
+              <span class="menu-title">Approve Pembayaran</span>
             </a>
           </li>
         </ul>
