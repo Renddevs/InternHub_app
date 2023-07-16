@@ -2,6 +2,9 @@
     namespace App\Services\User;
 
     use App\Repositories\User\IUserRepository;
+    use App\Libraries\ServiceResult;
+    use App\Libraries\DataServiceResult;
+
     
     class UserService implements IUserService
     {
@@ -14,21 +17,15 @@
 
         public function GetListJSON()
         {
+            $result = new DataServiceResult();
             try{
                 $data = $this->_userRepository->GetList();
-                return response()->json([
-                    "success" => true,
-                    "code" => 200,
-                    "message" => "",
-                    "data" =>  $data
-                ]);
+                $result->OK($data);
+                return response()->json($result);
 
-            }catch(Exceptio $ex){
-                return response()->json([
-                    "success" => false,
-                    "code" => 500,
-                    "message" => $ex->getMessage()
-                ]);
+            }catch(Exception $ex){
+                $result->Error($ex->getMessage());
+                return response()->json($result);
             }
         }
     }
