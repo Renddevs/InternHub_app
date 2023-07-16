@@ -1,23 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Repositories\User\IUserRepository;
+use App\Services\User\IUserService;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    private $_userRepository;
-    public function __construct(IUserRepository $_userRepository)
+    private $_userService;
+    public function __construct(IUserService $_userService)
     {
-        $this->_userRepository = $_userRepository;
+        $this->_userService = $_userService;
     }
 
     public function GetListJSON(){
-        $data = $this->_userRepository->GetList();
-        return response()->json([
-            "success" => true,
-            "code" => 200,
-            "data" => $data
-        ]);
+        return $this->_userService->GetListJSON();
     }
 }
