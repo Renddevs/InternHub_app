@@ -19,5 +19,5 @@ use App\Http\Controllers\UserController;
 
 Route::get('/getListUser', [UserController::class, 'GetListJSON']);
 
-
 Route::post('/upload', [UserController::class, 'Upload']);
+

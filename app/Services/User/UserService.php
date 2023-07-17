@@ -35,12 +35,10 @@
         }
 
         public function UploadFile(Request $request){
-            $result = new DataServiceResult();
+            $result = new ServiceResult();
             try {
-                $files = $request;
-                //$this->_fileHelper->Upload($files);
-                $result->data = $request->file('files');
-                $result->OK();
+                $files = $request->file('files');
+                return $this->_fileHelper->Upload($files);
             } catch (Exception $ex) {
                 $result->Error($ex->getMessage());
             }
