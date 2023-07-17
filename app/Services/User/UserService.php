@@ -20,12 +20,13 @@
             $result = new DataServiceResult();
             try{
                 $data = $this->_userRepository->GetList();
-                $result->OK($data);
-                return response()->json($result);
+                $result->data = $data;
+                $result->OK();
+                return $result->Response();
 
             }catch(Exception $ex){
                 $result->Error($ex->getMessage());
-                return response()->json($result);
+                return response()->json($result, $result->status->code);
             }
         }
     }

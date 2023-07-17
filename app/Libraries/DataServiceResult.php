@@ -10,7 +10,7 @@
             $this->status = new ServiceResult();
         }
 
-        public function OK($data, $desc="")
+        public function OK($desc="")
         {
             $this->status->OK($desc);
         }
@@ -23,6 +23,10 @@
         public function Error($desc="")
         {
             $this->status->Error();
+        }
+
+        public function Response(){
+            return response()->json(["data"=> $this->data, "status" => $this->status], $this->status->code);
         }
     }
 ?>

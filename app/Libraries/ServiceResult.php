@@ -31,5 +31,9 @@
             $this->code = 403;
             $this->desc = $desc;
         }
+
+        public function Response(){
+            return response()->json(["data" => $data, "status" => $this->status], $this->status->code);
+        }
     }
 ?>
