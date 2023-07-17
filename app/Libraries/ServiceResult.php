@@ -32,8 +32,14 @@
             $this->desc = $desc;
         }
 
+        public function Unprocessable($desc="")
+        {
+            $this->code = 422;
+            $this->desc = $desc;
+        }
+
         public function Response(){
-            return response()->json(["data" => $data, "status" => $this->status], $this->status->code);
+            return response()->json(["code" => $this->code, "desc" => $this->desc], $this->code);
         }
     }
 ?>

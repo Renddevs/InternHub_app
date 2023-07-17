@@ -7,8 +7,8 @@ use App\Repositories\User\IUserRepository;
 use App\Repositories\User\UserRepository;
 use App\Services\User\IUserService;
 use App\Services\User\UserService;
-use App\Helpers\Response\IResponseHelper;
-use App\Helpers\Response\ResponseHelper;
+use App\Helpers\FileHelper\IFileHelper;
+use App\Helpers\FileHelper\FileHelper;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         // helper
-        
+        $this->app->bind(IFileHelper::class,FileHelper::class);
         // helper
 
         // Repository

@@ -15,4 +15,8 @@ class UserController extends Controller
     public function GetListJSON(){
         return $this->_userService->GetListJSON();
     }
+    
+    public function Upload(Request $request){
+        return $this->_userService->UploadFile($request);
+    }
 }
