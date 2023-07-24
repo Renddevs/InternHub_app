@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PembayaranKpController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RefRoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,13 @@ Route::get('/getListUser', [UserController::class, 'GetListJSON']);
 
 
 Route::post('/upload', [UserController::class, 'Upload']);
+
+Route::post('/user/create', [UserController::class, 'Create']);
+
+Route::put('/refRole/update/{id}', [RefRoleController::class, 'Update']);
+
+Route::post('/refRole/create', [RefRoleController::class, 'Create']);
+
+Route::get('/refRole/get/{id}', [RefRoleController::class, 'Get']);
+
+Route::delete('/refRole/delete/{id}', [RefRoleController::class, 'Delete']);
