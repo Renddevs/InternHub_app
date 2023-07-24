@@ -20,7 +20,6 @@ use App\Http\Controllers\RefRoleController;
 
 Route::get('/getListUser', [UserController::class, 'GetListJSON']);
 
-
 Route::post('/upload', [UserController::class, 'Upload']);
 
 Route::post('/user/create', [UserController::class, 'Create']);
