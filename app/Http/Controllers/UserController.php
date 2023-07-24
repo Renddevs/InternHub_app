@@ -25,6 +25,6 @@ class UserController extends Controller
         $data->username = $request->username;
         $data->password = $request->password;
         //return json_encode($data);
-        return json_encode($this->_userService->CreateUser($data));
+        return json_encode($this->_userService->Create($data));
     }
 }

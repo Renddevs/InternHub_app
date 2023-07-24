@@ -36,11 +36,11 @@
             return $result->Response();
         }
         
-        public function CreateUser(CreateUserRequest $request) : ServiceResult
+        public function Create(CreateUserRequest $request) : ServiceResult
         {
             $result = new ServiceResult();
             try {
-                $result = $this->_userRepository->CreateUser($request);
+                $result = $this->_userRepository->Create($request);
             } catch (Exception $ex) {
                 $result->Error("Error in UserService(Create User) : ".$ex->getMessage());
             }

@@ -7,6 +7,6 @@
     interface IUserService
     {
         public function UploadFile(Request $request);
-        public function CreateUser(CreateUserRequest $request);
+        public function Create(CreateUserRequest $request);
     }
 ?>

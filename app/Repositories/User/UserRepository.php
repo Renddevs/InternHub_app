@@ -16,7 +16,7 @@
             $this->model = $model;
         }
 
-        public function CreateUser(CreateUserRequest $request) : ServiceResult
+        public function Create(CreateUserRequest $request) : ServiceResult
         {
             $result = new ServiceResult();
             try {

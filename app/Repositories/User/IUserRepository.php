@@ -4,6 +4,6 @@
     use App\Object\User\CreateUserRequest;
 
     interface IUserRepository{
-        public function CreateUser(CreateUserRequest $request) : ServiceResult;
+        public function Create(CreateUserRequest $request) : ServiceResult;
     }
 ?>
