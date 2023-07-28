@@ -6,6 +6,7 @@
     
     interface IUserService
     {
+        public function Get(string $id);
         public function UploadFile(Request $request);
         public function Create(CreateUserRequest $request);
     }

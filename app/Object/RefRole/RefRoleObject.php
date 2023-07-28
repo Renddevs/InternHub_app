@@ -4,6 +4,7 @@
 
     class RefRoleObject
     {
+        public string $id;
         public string $name;
         public bool $is_active;
     }

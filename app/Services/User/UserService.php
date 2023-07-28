@@ -6,7 +6,7 @@
     use App\Libraries\ServiceResult;
     use App\Libraries\DataServiceResult;
     use App\Object\User\CreateUserRequest;
-
+    use App\Object\User\UserObject;
     use Illuminate\Http\Request;
     use Illuminate\Http\Response;
 
@@ -23,6 +23,18 @@
         {
             $this->_userRepository = $_userRepository;
             $this->_fileHelper = $_fileHelper;
+        }
+
+        public function Get(string $id){
+            $result = new ServiceResult();
+            $data = new UserObject();
+            try {
+                $getUser = $this->_userRepository->Get($id);
+                return $getUser;
+            } catch (Exception $ex) {
+                $result->Error("Error UserService(Get) ".$ex->getMessage());
+            }
+            return ["data" => $data, "status" => $result];
         }
 
         public function UploadFile(Request $request){

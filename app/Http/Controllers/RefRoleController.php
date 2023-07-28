@@ -35,6 +35,10 @@ class RefRoleController extends Controller
         return json_encode($this->_RefRoleService->Get($id));
     }
 
+    public function GetList(string $name = "", bool $is_active){
+        return json_encode($this->_RefRoleService->GetList($name, $is_active));
+    }
+
     public function Delete(string $id){
         return json_encode($this->_RefRoleService->Delete($id));
     }

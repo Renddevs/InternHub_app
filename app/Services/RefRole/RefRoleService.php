@@ -28,8 +28,7 @@
             $data = new RefRoleObject(); 
             try {
                 $getRefRole = $this->_refRoleRepository->Get($id);
-                $data = $getRefRole["data"];
-                $result = $getRefRole["status"];
+                return $getRefRole;
             } catch (Exception $ex) {
                 $result->Error("Error in RefRoleService(Get Ref Role) : ".$ex->getMessage());
             }
@@ -67,6 +66,18 @@
                 $result->Error("Error in RefRoleService(Delete Ref Role) : ".$ex->getMessage());
             }
             return $result;
+        }
+
+        public function GetList(string $name = "", bool $is_active)
+        {
+            $result = new ServiceResult();
+            try {
+                $data = $this->_refRoleRepository->GetList($name, $is_active);
+                return $data;
+            } catch (Exception $ex) {
+                $result->Error("Error RefRoleService(GetList) : ".$ex->getMessage());
+            }
+            return ["data"=> $data, "status"=> $status];
         }
     }
     

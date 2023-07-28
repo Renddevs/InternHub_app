@@ -14,6 +14,10 @@ class UserController extends Controller
     {
         $this->_userService = $_userService;
     }
+
+    public function Get(string $id){
+        return json_encode($this->_userService->Get($id));
+    }
     
     public function Upload(Request $request){
         return $this->_userService->UploadFile($request);

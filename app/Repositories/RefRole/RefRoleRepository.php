@@ -39,13 +39,11 @@
         public function Get(string $id) : mixed
         {
             $result = new ServiceResult();
-            $refRole = new RefRoleObject();
+            $data = null;
             try {
-                $data = RefRole::where('id', $id)->first();
-                if($data != null){
-                    $refRole->id = $data->id;
-                    $refRole->name = $data->name;
-                    $refRole->is_active = $data->is_active;
+                $refRole = $this->model::find($id);
+                if($refRole != null){
+                    $data = $this->model::find($id)->get()->map(fn($role) => $this->Mapper($role))->first();
                     $result->OK();
                 }else{
                     $result->Notfound();
@@ -54,7 +52,24 @@
                 $result->Error("Error in RefRoleRepository(CreateRefRole) : ".$ex->getMessage());
             }
             
-            return ["data" => $refRole, "status" => $result];
+            return ["data" => $data, "status" => $result];
+        }
+
+        public function GetList(string $name = "", bool $is_active){
+            $result = new ServiceResult();
+            $data = null;
+            try {
+                $refRole = $this->model;
+                if($name != null && $name != ""){
+                    $refRole = $refRole->where('name', 'like', '%'.$name.'%');
+                }
+                $refRole = $refRole->where('is_active', $is_active);
+                $data = $refRole->get()->map(fn($refRole) => $this->Mapper($refRole));
+                $result->OK();
+            } catch (Exception $ex) {
+                $result->Error($ex->getMessage());
+            }
+            return ["data" => $data, "status" => $result]; 
         }
 
         public function Update(UpdateRefRoleRequest $request) : ServiceResult
@@ -87,6 +102,15 @@
             }
             
             return $result;
+        }
+
+        public function Mapper(RefRole $model) : RefRoleObject
+        {
+            $data = new RefRoleObject();
+            $data->id = $model->id;
+            $data->name = $model->name;
+            $data->is_active = $model->is_active;
+            return $data;
         }
     }
 ?>
