@@ -26,6 +26,10 @@ Route::get('/user/get/{id}', [UserController::class, 'Get']);
 
 Route::post('/user/create', [UserController::class, 'Create']);
 
+Route::put('/user/update/{id}', [UserController::class, 'Update']);
+
+Route::delete('/user/delete/{id}', [RefRoleController::class, 'Delete']);
+
 Route::put('/refRole/update/{id}', [RefRoleController::class, 'Update']);
 
 Route::post('/refRole/create', [RefRoleController::class, 'Create']);

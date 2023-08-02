@@ -6,6 +6,7 @@
     use App\Libraries\ServiceResult;
     use App\Libraries\DataServiceResult;
     use App\Object\User\CreateUserRequest;
+    use App\Object\User\UpdateUserRequest;
     use App\Object\User\UserObject;
     use Illuminate\Http\Request;
     use Illuminate\Http\Response;
@@ -55,6 +56,28 @@
                 $result = $this->_userRepository->Create($request);
             } catch (Exception $ex) {
                 $result->Error("Error in UserService(Create User) : ".$ex->getMessage());
+            }
+            return $result;
+        }
+
+        public function Update(UpdateUserRequest $request) : ServiceResult
+        {
+            $result = new ServiceResult();
+            try {
+                $result = $this->_userRepository->Update($request);
+            } catch (Exception $ex) {
+                $result->Error("Error in UserService(Update User) : ".$ex->getMessage());
+            }
+            return $result;
+        }
+
+        public function Delete(string $id) : ServiceResult
+        {
+            $result = new ServiceResult();
+            try {
+                $result = $this->_userRepository->Delete($id);
+            } catch (Exception $ex) {
+                $result->Error("Error in UserService(Delete User) : ".$ex->getMessage());
             }
             return $result;
         }
