@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('create_by');
-            $table->datetime('created_date');
+            $table->datetime('created_at');
             $table->string('update_by');
-            $table->datetime('updated_date');
+            $table->datetime('updated_at');
             $table->foreign('id_user')->references('id')->on('user');
             $table->foreign('id_ref_prodi')->references('id')->on('ref_prodi');
         });
