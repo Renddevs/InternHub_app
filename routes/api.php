@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PembayaranKpController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RefRoleController;
+use App\Http\Controllers\RefProdiController;
+use App\Http\Controllers\MstDosenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,19 @@ Route::get('/refRole/get/{id}', [RefRoleController::class, 'Get']);
 Route::get('/refRole/getList/{id}/{is_active}', [RefRoleController::class, 'GetList']);
 
 Route::delete('/refRole/delete/{id}', [RefRoleController::class, 'Delete']);
+
+Route::put('/refProdi/update/{id}', [RefProdiController::class, 'Update']);
+
+Route::post('/refProdi/create', [RefProdiController::class, 'Create']);
+
+Route::get('/refProdi/get/{id}', [RefProdiController::class, 'Get']);
+
+Route::delete('/refProdi/delete/{id}', [RefProdiController::class, 'Delete']);
+
+Route::put('/mstDosen/update/{id}', [MstDosenController::class, 'Update']);
+
+Route::post('/mstDosen/create', [MstDosenController::class, 'Create']);
+
+Route::get('/mstDosen/get/{id}', [MstDosenController::class, 'Get']);
+
+Route::delete('/mstDosen/delete/{id}', [MstDosenController::class, 'Delete']);

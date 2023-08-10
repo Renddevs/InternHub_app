@@ -9,5 +9,6 @@
         public function Create(CreateUserRequest $request) : ServiceResult;
         public function Update(UpdateUserRequest $request) : ServiceResult;
         public function Delete(string $id) : ServiceResult;
+        public function Mapper(User $model) : UserObject;
     }
 ?>

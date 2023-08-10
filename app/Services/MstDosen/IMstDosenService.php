@@ -1,12 +1,14 @@
 <?php
-    namespace App\Repositories\MstDosen;
-    use App\Libraries\ServiceResult;
+    namespace App\Services\MstDosen;
+    use Illuminate\Http\Request;
     use App\Object\MstDosen\CreateMstDosenRequest;
     use App\Object\MstDosen\UpdateMstDosenRequest;
-
-    interface IMstDosenRepository{
+    use App\Libraries\ServiceResult;
+    
+    interface IMstDosenService
+    {
         public function Get(string $id);
-        public function Create(CreateMstDosenRequest $request) : ServiceResult;
+        public function Create(CreateMstDosenRequest $request);
         public function Update(UpdateMstDosenRequest $request) : ServiceResult;
         public function Delete(string $id) : ServiceResult;
     }
