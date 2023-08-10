@@ -16,4 +16,9 @@ class RefProdi extends Model
     {
         return $this->hasMany(MstDosen::class, 'id_ref_prodi');
     }
+
+    public function MstMahasiswa() : HasMany
+    {
+        return $this->hasMany(MstMahasiswa::class, 'id_ref_role');
+    }
 }

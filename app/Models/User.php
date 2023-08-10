@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(MstDosen::class, 'id_user');
     }
+
+    public function MstMahasiswa() : HasOne
+    {
+        return $this->hasOne(MstMahasiswa::class, 'id_user');
+    }
 }
