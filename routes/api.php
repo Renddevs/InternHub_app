@@ -9,6 +9,7 @@ use App\Http\Controllers\RefRoleController;
 use App\Http\Controllers\RefProdiController;
 use App\Http\Controllers\MstDosenController;
 use App\Http\Controllers\MstMahasiswaController;
+use App\Http\Controllers\TrsPendaftaranKpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,3 +67,11 @@ Route::post('/mstMahasiswa/create', [MstMahasiswaController::class, 'Create']);
 Route::get('/mstMahasiswa/get/{id}', [MstMahasiswaController::class, 'Get']);
 
 Route::delete('/mstMahasiswa/delete/{id}', [MstMahasiswaController::class, 'Delete']);
+
+Route::put('/trsPendaftaranKp/update/{id}', [TrsPendaftaranKpController::class, 'Update']);
+
+Route::post('/trsPendaftaranKp/create', [TrsPendaftaranKpController::class, 'Create']);
+
+Route::get('/trsPendaftaranKp/get/{id}', [TrsPendaftaranKpController::class, 'Get']);
+
+Route::delete('/trsPendaftaranKp/delete/{id}', [TrsPendaftaranKpController::class, 'Delete']);

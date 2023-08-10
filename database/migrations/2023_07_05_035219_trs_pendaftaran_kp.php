@@ -19,9 +19,9 @@ return new class extends Migration
             $table->boolean('is_susulan');
             $table->string('keterangan');
             $table->string('create_by');
-            $table->datetime('created_date');
-            $table->string('update_by');
-            $table->datetime('updated_date');
+            $table->datetime('created_at');
+            $table->string('update_by')->nullable();
+            $table->datetime('updated_at')->nullable();
         });
     }
 
