@@ -11,4 +11,9 @@ class RefProdi extends Model
     use HasFactory, HasUuids;
 
     protected $table = 'ref_prodi';
+
+    public function MstDosen() : HasMany
+    {
+        return $this->hasMany(MstDosen::class, 'id_ref_prodi');
+    }
 }

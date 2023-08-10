@@ -1,5 +1,5 @@
 <?php
-    namespace App\Object\User;
+    namespace App\Object\RefProdi;
 
     class RefProdiObject
     {

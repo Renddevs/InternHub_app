@@ -1,8 +1,10 @@
 <?php
     namespace App\Repositories\User;
     use App\Libraries\ServiceResult;
+    use App\Models\User;
     use App\Object\User\CreateUserRequest;
     use App\Object\User\UpdateUserRequest;
+    use App\Object\User\UserObject;
 
     interface IUserRepository{
         public function Get(string $id);

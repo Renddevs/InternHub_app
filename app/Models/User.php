@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(RefRole::class, 'id_role');
     }
+
+    public function MstDosen() : HasOne
+    {
+        return $this->hasOne(MstDosen::class, 'id_user');
+    }
 }

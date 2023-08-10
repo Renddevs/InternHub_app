@@ -1,13 +1,13 @@
 <?php
     namespace App\Repositories\MstDosen;
     use App\Models\MstDosen;
-    use App\Object\User\CreateMstDosenRequest;
-    use App\Object\User\MstDosenObject;
-    use App\Object\User\UpdateMstDosenRequest;
+    use App\Object\MstDosen\CreateMstDosenRequest;
+    use App\Object\MstDosen\MstDosenObject;
+    use App\Object\MstDosen\UpdateMstDosenRequest;
     use App\Libraries\ServiceResult;
     use Illuminate\Http\Response;
     use App\Repositories\RefProdi\IRefProdiRepository;
-    use App\Repositories\User\IRefUserRepository;
+    use App\Repositories\User\IUserRepository;
 
     use Exception;
 
@@ -21,7 +21,7 @@
         {
             $this->model = $model;
             $this->_userRepository = $_userRepository;
-            $this->_refRoleRepository = $_refRoleRepository;
+            $this->_refProdiRepository = $_refProdiRepository;
         }
 
         public function Get(string $id){
