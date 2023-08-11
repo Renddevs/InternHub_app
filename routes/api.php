@@ -11,6 +11,8 @@ use App\Http\Controllers\MstDosenController;
 use App\Http\Controllers\MstMahasiswaController;
 use App\Http\Controllers\TrsPendaftaranKpController;
 
+use App\Http\Controllers\MstMediaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('extension');
             $table->string('folder');
             $table->string('create_by');
-            $table->datetime('created_date');
+            $table->datetime('created_at');
         });
     }
 

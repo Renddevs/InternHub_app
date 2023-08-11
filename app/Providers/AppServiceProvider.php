@@ -17,6 +17,8 @@ use App\Repositories\MstMahasiswa\IMstMahasiswaRepository;
 use App\Repositories\MstMahasiswa\MstMahasiswaRepository;
 use App\Repositories\TrsPendaftaranKp\ITrsPendaftaranKpRepository;
 use App\Repositories\TrsPendaftaranKp\TrsPendaftaranKpRepository;
+use App\Repositories\MstMedia\IMstMediaRepository;
+use App\Repositories\MstMedia\MstMediaRepository;
 use App\Services\RefRole\IRefRoleService;
 use App\Services\RefRole\RefRoleService;
 use App\Services\RefProdi\IRefProdiService;
@@ -27,6 +29,8 @@ use App\Services\MstMahasiswa\IMstMahasiswaService;
 use App\Services\MstMahasiswa\MstMahasiswaService;
 use App\Services\TrsPendaftaranKp\ITrsPendaftaranKpService;
 use App\Services\TrsPendaftaranKp\TrsPendaftaranKpService;
+use App\Services\MstMedia\IMstMediaService;
+use App\Services\MstMedia\TMstMediaService;
 use App\Helpers\FileHelper\IFileHelper;
 use App\Helpers\FileHelper\FileHelper;
 
@@ -48,6 +52,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IMstDosenRepository::class,MstDosenRepository::class);
         $this->app->bind(IMstMahasiswaRepository::class,MstMahasiswaRepository::class);
         $this->app->bind(ITrsPendaftaranKpRepository::class,TrsPendaftaranKpRepository::class);
+        $this->app->bind(IMstMediaRepository::class,MstMediaRepository::class);
         // Repository
 
         // Service
@@ -57,6 +62,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IMstDosenService::class,MstDosenService::class);
         $this->app->bind(IMstMahasiswaService::class,MstMahasiswaService::class);
         $this->app->bind(ITrsPendaftaranKpService::class,TrsPendaftaranKpService::class);
+        $this->app->bind(IMstMediaService::class,MstMediaService::class);
         // Service
     }
 
