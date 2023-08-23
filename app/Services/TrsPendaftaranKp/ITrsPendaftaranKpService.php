@@ -11,5 +11,6 @@
         public function Create(CreateTrsPendaftaranKpRequest $request);
         public function Update(UpdateTrsPendaftaranKpRequest $request) : ServiceResult;
         public function Delete(string $id) : ServiceResult;
+        public function VPendaftaran(string $npm) : ServiceResult;
     }
 ?>

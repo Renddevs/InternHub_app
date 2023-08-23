@@ -77,3 +77,5 @@ Route::post('/trsPendaftaranKp/create', [TrsPendaftaranKpController::class, 'Cre
 Route::get('/trsPendaftaranKp/get/{id}', [TrsPendaftaranKpController::class, 'Get']);
 
 Route::delete('/trsPendaftaranKp/delete/{id}', [TrsPendaftaranKpController::class, 'Delete']);
+
+Route::get('/trsPendaftaranKp/verifikasi/{id}', [TrsPendaftaranKpController::class, 'VPendaftaran']);

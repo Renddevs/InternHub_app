@@ -38,6 +38,11 @@
             $this->desc = $desc;
         }
 
+        public function UnAcceptable($desc=""){
+            $this->code = 406;
+            $this->desc = $desc;
+        }
+
         public function Response(){
             return response()->json(["code" => $this->code, "desc" => $this->desc], $this->code);
         }

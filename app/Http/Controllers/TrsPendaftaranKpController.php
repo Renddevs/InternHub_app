@@ -42,4 +42,8 @@ class TrsPendaftaranKpController extends Controller
     public function Delete(string $id){
         return json_encode($this->_trsPendaftaranKpService->Delete($id));
     }
+
+    public function Verifikasi(string $id){
+        return json_encode($this->_trsPendaftaranKpService->VPendaftaran($id));
+    }
 }

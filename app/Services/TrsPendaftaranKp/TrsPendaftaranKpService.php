@@ -67,6 +67,18 @@
             }
             return $result;
         }
+        
+        public function VPendaftaran(string $npm) : ServiceResult
+        {
+            $result = new ServiceResult();
+            try {
+                //Sementara fungsi akan selalu menghasilkan TRUE
+                $result->OK("Mahasiswa bersangkutan dapat melakukan pendaftaran");
+            } catch (Exception $ex) {
+                $result->Error($ex->getMessage());
+            }
+            return $result;
+        }
     }
     
 
