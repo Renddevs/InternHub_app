@@ -21,21 +21,25 @@ class RefProdiController extends Controller
         $data->id = $id;
         $data->prodi_name = $request->prodi_name;
         $data->tahun_ajaran = $request->tahun_ajaran;
-        return json_encode($this->_refProdiService->Update($data));
+        $result = $this->_refProdiService->Update($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Create(Request $request){
         $data = new CreateRefProdiRequest();
         $data->prodi_name = $request->prodi_name;
         $data->tahun_ajaran = $request->tahun_ajaran;
-        return json_encode($this->_refProdiService->Create($data));
+        $result = $this->_refProdiService->Create($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Get(string $id){
-        return json_encode($this->_refProdiService->Get($id));
+        $result = $this->_refProdiService->Get($id);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Delete(string $id){
-        return json_encode($this->_refProdiService->Delete($id));
+        $result = $this->_refProdiService->Delete($id);
+        return response()->json($result, $result["status"]->code);
     }
 }

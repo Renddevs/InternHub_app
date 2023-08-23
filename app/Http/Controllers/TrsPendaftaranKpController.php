@@ -22,7 +22,8 @@ class TrsPendaftaranKpController extends Controller
         $data->id_ref_prodi = $request->id_ref_prodi;
         $data->firstname = $request->firstname;
         $data->lastname = $request->lastname;
-        return json_encode($this->_trsPendaftaranKpService->Update($data));
+        $result = $this->_trsPendaftaranKpService->Update($data);
+        return response()->json($result, $result->code);
     }
 
     public function Create(Request $request){
@@ -32,18 +33,22 @@ class TrsPendaftaranKpController extends Controller
         $data->tgl_akhir = $request->tgl_akhir;
         $data->is_susulan = $request->is_susulan;
         $data->keterangan = $request->keterangan;
-        return json_encode($this->_trsPendaftaranKpService->Create($data));
+        $result = $this->_trsPendaftaranKpService->Create($data);
+        return response()->json($result, $result->c);
     }
 
     public function Get(string $id){
-        return json_encode($this->_trsPendaftaranKpService->Get($id));
+        $result = $this->_trsPendaftaranKpService->Get($id);
+        return response($result, $result->code);
     }
 
     public function Delete(string $id){
-        return json_encode($this->_trsPendaftaranKpService->Delete($id));
+        $result = $this->_trsPendaftaranKpService->Delete($id);
+        return response()->json($result, $result->code);
     }
 
     public function Verifikasi(string $id){
-        return json_encode($this->_trsPendaftaranKpService->VPendaftaran($id));
+        $result = $this->_trsPendaftaranKpService->VPendaftaran($id);
+        return response()->json($result, $result->code);
     }
 }

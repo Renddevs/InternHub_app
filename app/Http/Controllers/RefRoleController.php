@@ -21,25 +21,30 @@ class RefRoleController extends Controller
         $data->id = $id;
         $data->name = $request->name;
         $data->is_active = $request->is_active;
-        return json_encode($this->_RefRoleService->Update($data));
+        $result = $this->_RefRoleService->Update($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Create(Request $request){
         $data = new CreateRefRoleRequest();
         $data->name = $request->name;
         $data->is_active = $request->is_active;
-        return json_encode($this->_RefRoleService->Create($data));
+        $result = $this->_RefRoleService->Create($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Get(string $id){
-        return json_encode($this->_RefRoleService->Get($id));
+        $result = $this->_RefRoleService->Get($id);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function GetList(string $name = "", bool $is_active){
-        return json_encode($this->_RefRoleService->GetList($name, $is_active));
+        $result = $this->_RefRoleService->GetList($name, $is_active);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Delete(string $id){
-        return json_encode($this->_RefRoleService->Delete($id));
+        $result = $this->_RefRoleService->Delete($id);
+        return response()->json($result, $result["status"]->code);
     }
 }

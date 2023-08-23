@@ -77,7 +77,7 @@
             } catch (Exception $ex) {
                 $result->Error("Error RefRoleService(GetList) : ".$ex->getMessage());
             }
-            return ["data"=> $data, "status"=> $status];
+            return $result;
         }
     }
     

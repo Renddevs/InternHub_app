@@ -24,9 +24,5 @@
         {
             $this->status->Error();
         }
-
-        public function Response(){
-            return response()->json(["data"=> $this->data, "status" => $this->status], $this->status->code);
-        }
     }
 ?>

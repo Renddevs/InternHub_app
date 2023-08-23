@@ -22,7 +22,8 @@ class MstDosenController extends Controller
         $data->id_ref_prodi = $request->id_ref_prodi;
         $data->firstname = $request->firstname;
         $data->lastname = $request->lastname;
-        return json_encode($this->_mstDosenService->Update($data));
+        $result = $this->_mstDosenService->Update($data);
+        return response()->json($result, $result->code);
     }
 
     public function Create(Request $request){
@@ -31,14 +32,16 @@ class MstDosenController extends Controller
         $data->id_ref_prodi = $request->id_ref_prodi;
         $data->firstname = $request->firstname;
         $data->lastname = $request->lastname;
-        return json_encode($this->_mstDosenService->Create($data));
+        $result = $this->_mstDosenService->Create($data);
     }
 
     public function Get(string $id){
-        return json_encode($this->_mstDosenService->Get($id));
+        $result = $this->_mstDosenService->Get($id);
+        return response()->json($result, $result->code);
     }
 
     public function Delete(string $id){
-        return json_encode($this->_mstDosenService->Delete($id));
+        $result = $this->_mstDosenService->Delete($id);
+        return response()->json($result, $result->code);
     }
 }

@@ -78,4 +78,4 @@ Route::get('/trsPendaftaranKp/get/{id}', [TrsPendaftaranKpController::class, 'Ge
 
 Route::delete('/trsPendaftaranKp/delete/{id}', [TrsPendaftaranKpController::class, 'Delete']);
 
-Route::get('/trsPendaftaranKp/verifikasi/{id}', [TrsPendaftaranKpController::class, 'VPendaftaran']);
+Route::get('/trsPendaftaranKp/verifikasi/{id}', [TrsPendaftaranKpController::class, 'verifikasi']);

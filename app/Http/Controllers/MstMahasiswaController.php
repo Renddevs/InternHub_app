@@ -23,7 +23,8 @@ class MstMahasiswaController extends Controller
         $data->id_ref_prodi = $request->id_ref_prodi;
         $data->firstname = $request->firstname;
         $data->lastname = $request->lastname;
-        return json_encode($this->_mstMahasiswaService->Update($data));
+        $result = $this->_mstMahasiswaService->Update($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Create(Request $request){
@@ -33,14 +34,17 @@ class MstMahasiswaController extends Controller
         $data->npm = $request->npm;
         $data->firstname = $request->firstname;
         $data->lastname = $request->lastname;
-        return json_encode($this->_mstMahasiswaService->Create($data));
+        $result = $this->_mstMahasiswaService->Create($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Get(string $id){
-        return json_encode($this->_mstMahasiswaService->Get($id));
+        $result = $this->_mstMahasiswaService->Get($id);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Delete(string $id){
-        return json_encode($this->_mstMahasiswaService->Delete($id));
+        $result = $this->_mstMahasiswaService->Delete($id);
+        return response()->json($result, $result["status"]->code);
     }
 }

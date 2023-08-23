@@ -72,14 +72,12 @@
         {
             $result = new ServiceResult();
             try {
-                //Sementara fungsi akan selalu menghasilkan TRUE
-                $result->OK("Mahasiswa bersangkutan dapat melakukan pendaftaran");
+                //Sementara fungsi akan selalu menghasilkan FALSE
+                $result->UnAcceptable("Mahasiswa bersangkutan tidak dapat melakukan pendaftaran");
             } catch (Exception $ex) {
                 $result->Error($ex->getMessage());
             }
             return $result;
         }
     }
-    
-
 ?>

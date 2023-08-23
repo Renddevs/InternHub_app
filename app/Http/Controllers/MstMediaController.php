@@ -22,14 +22,17 @@ class MstMediaController extends Controller
         $data->id_ref_prodi = $request->id_ref_prodi;
         $data->firstname = $request->firstname;
         $data->lastname = $request->lastname;
-        return json_encode($this->_mstMediaService->Create($data));
+        $result = $this->_mstMediaService->Create($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Get(string $id){
-        return json_encode($this->_mstMediaService->Get($id));
+        $result = $this->_mstMediaService->Get($id);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Delete(string $id){
-        return json_encode($this->_mstMediaService->Delete($id));
+        $result = $this->_mstMediaService->Delete($id);
+        return response()->json($result, $result["status"]->code);
     }
 }

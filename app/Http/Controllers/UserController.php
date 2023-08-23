@@ -17,11 +17,13 @@ class UserController extends Controller
     }
 
     public function Get(string $id){
-        return json_encode($this->_userService->Get($id));
+        $result = $this->_userService->Get($id);
+        return response()->json($result, $result["status"]->code);
     }
     
     public function Upload(Request $request){
-        return $this->_userService->UploadFile($request);
+        $result = $this->_userService->UploadFile($request);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Create(Request $request){
@@ -29,8 +31,8 @@ class UserController extends Controller
         $data->id_role = $request->id_role;
         $data->username = $request->username;
         $data->password = $request->password;
-        //return json_encode($data);
-        return json_encode($this->_userService->Create($data));
+        $result = $this->_userService->Create($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Update(Request $request, string $id){
@@ -39,11 +41,12 @@ class UserController extends Controller
         $data->id_role = $request->id_role;
         $data->username = $request->username;
         $data->password = $request->password;
-
-        return json_encode($this->_userService->Update($data));
+        $result = $this->_userService->Update($data);
+        return response()->json($result, $result["status"]->code);
     }
 
     public function Delete(string $id){
-        return json_encode($this->_userService->Delete($id));
+        $result = $this->_userService->Delete($id);
+        return response()->json($result, $result["status"]->code);
     }
 }

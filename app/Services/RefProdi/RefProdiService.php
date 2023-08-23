@@ -25,14 +25,13 @@
 
         public function Get(string $id){
             $result = new ServiceResult();
-            $data = new UserObject();
             try {
                 $refProdi = $this->_refProdiRepository->Get($id);
                 return $refProdi;
             } catch (Exception $ex) {
                 $result->Error("Error RefProdiService(Get) ".$ex->getMessage());
             }
-            return ["data" => $data, "status" => $result];
+            return $result;
         }
         
         public function Create(CreateRefProdiRequest $request) : ServiceResult
