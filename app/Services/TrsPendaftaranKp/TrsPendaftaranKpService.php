@@ -7,11 +7,11 @@
     use App\Object\TrsPendaftaranKp\CreateTrsPendaftaranKpRequest;
     use App\Object\TrsPendaftaranKp\UpdateTrsPendaftaranKpRequest;
     use App\Object\TrsPendaftaranKp\TrsPendaftaranKpObject;
+    use App\Object\MstMedia\CreateMstMediaRequest;
     use Illuminate\Http\Request;    
     use Illuminate\Http\Response;
-
-
     use Exception;
+
 
     
     class TrsPendaftaranKpService implements ITrsPendaftaranKpService
@@ -64,18 +64,6 @@
                 $result = $this->_trsPendaftaranKpRepository->Delete($id);
             } catch (Exception $ex) {
                 $result->Error("Error in TrsPendaftaranKpService(Delete TrsPendaftaranKp) : ".$ex->getMessage());
-            }
-            return $result;
-        }
-        
-        public function VPendaftaran(string $npm) : ServiceResult
-        {
-            $result = new ServiceResult();
-            try {
-                //Sementara fungsi akan selalu menghasilkan FALSE
-                $result->UnAcceptable("Mahasiswa bersangkutan tidak dapat melakukan pendaftaran");
-            } catch (Exception $ex) {
-                $result->Error($ex->getMessage());
             }
             return $result;
         }

@@ -11,4 +11,5 @@ class TrsPembayaranKp extends Model
     use HasUuids, HasFactory;
 
     protected $table = 'trs_pembayaran_kp';
+    public $timestamps = false;
 }

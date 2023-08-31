@@ -11,4 +11,5 @@ class MstMedia extends Model
     use HasUuids,HasFactory;
 
     protected $table = 'mst_media';
+    public $timestamps = false;
 }

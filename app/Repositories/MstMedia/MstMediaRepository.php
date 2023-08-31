@@ -37,14 +37,14 @@
         {
             $result = new ServiceResult();
             try {
-                $user = new MstMedia;
-                $user->name = $request->name;
-                $user->original_name = $request->original_name;
-                $user->extension = $request->extension;
-                $user->folder = $request->folder;
-                $user->create_by = "SYSTEM";
-                $user->created_at = date("Y-m-d h:i:s");
-                $user->save();
+                $media = new MstMedia;
+                $media->name = $request->name;
+                $media->original_name = $request->original_name;
+                $media->extension = $request->extension;
+                $media->folder = $request->folder;
+                $media->create_by = "SYSTEM";
+                $media->created_at = date("Y-m-d h:i:s");
+                $media->save();
                 $result->OK();
             } catch (Exception $ex) {
                 $result->Error("Error in MstMediaRepository(CreateMstMedia) : ".$ex->getMessage());

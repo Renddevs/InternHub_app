@@ -5,6 +5,12 @@
         public $code = 400;
         public $desc = "Bad Request";
 
+        public function BadRequest($desc="")
+        {
+            $this->code = 400;
+            $this->desc = $desc;
+        }
+
         public function OK($desc="")
         {
             $this->code = 200;

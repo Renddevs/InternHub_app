@@ -10,6 +10,7 @@ use App\Http\Controllers\RefProdiController;
 use App\Http\Controllers\MstDosenController;
 use App\Http\Controllers\MstMahasiswaController;
 use App\Http\Controllers\TrsPendaftaranKpController;
+use App\Http\Controllers\TrsPembayaranKpController;
 
 use App\Http\Controllers\MstMediaController;
 
@@ -78,4 +79,6 @@ Route::get('/trsPendaftaranKp/get/{id}', [TrsPendaftaranKpController::class, 'Ge
 
 Route::delete('/trsPendaftaranKp/delete/{id}', [TrsPendaftaranKpController::class, 'Delete']);
 
-Route::get('/trsPendaftaranKp/verifikasi/{id}', [TrsPendaftaranKpController::class, 'verifikasi']);
+Route::get('/trsPembayaranKp/verifikasi/{id}', [TrsPembayaranKpController::class, 'verifikasi']);
+
+Route::post('/trsPembayaranKp/uploadBPembayaran', [TrsPembayaranKpController::class, 'UploadBPembayaran']);

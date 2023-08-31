@@ -46,9 +46,4 @@ class TrsPendaftaranKpController extends Controller
         $result = $this->_trsPendaftaranKpService->Delete($id);
         return response()->json($result, $result->code);
     }
-
-    public function Verifikasi(string $id){
-        $result = $this->_trsPendaftaranKpService->VPendaftaran($id);
-        return response()->json($result, $result->code);
-    }
 }
