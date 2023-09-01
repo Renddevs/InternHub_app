@@ -3,6 +3,7 @@
 
     class CreateMstMediaRequest
     {
+        public string $id;
         public string $name;
         public string $original_name;
         public string $extension;

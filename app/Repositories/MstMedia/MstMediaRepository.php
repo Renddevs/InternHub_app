@@ -38,6 +38,7 @@
             $result = new ServiceResult();
             try {
                 $media = new MstMedia;
+                $media->id = $request->id;
                 $media->name = $request->name;
                 $media->original_name = $request->original_name;
                 $media->extension = $request->extension;

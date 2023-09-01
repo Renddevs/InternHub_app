@@ -48,9 +48,8 @@
                 $image = $request->file('bukti_pembayaran');
                 $folder = "asset/img/bukti_pembayaran";
                 DB::beginTransaction();
-                $id_mst_media = Str::uuid();
                 $file = new CreateMstMediaRequest();
-                $file->id = $id_mst_media;
+                $file->id = Str::uuid();
                 $file->name = "file";
                 $file->original_name = $image->getClientOriginalName();
                 $file->extension = $image->getClientOriginalExtension();
@@ -60,9 +59,10 @@
                     return $saveMedia;
                 }
                 $tPembayaran = new CreateTrsPembayaranKpRequest();
-                $tPembayaran->id_trs_Pembayaran_kp = $request->id_trs_Pembayaran_kp;
+                $tPembayaran->id = Str::uuid();
+                $tPembayaran->id_trs_pendaftaran_kp = $request->id_trs_pendaftaran_kp;
                 $tPembayaran->id_mst_mahasiswa = $request->id_mst_mahasiswa;
-                $tPembayaran->id_mst_media = $id_mst_media;
+                $tPembayaran->id_mst_media = $file->id;
                 $savePembayaran = $this->_trsPembayaranKpRepository->Create($tPembayaran);
                 if($savePembayaran->code != 200){
                     return $savePembayaran;

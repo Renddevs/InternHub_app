@@ -17,8 +17,8 @@ return new class extends Migration
             $table->uuid('id_mst_mahasiswa');
             $table->uuid('id_mst_media');
             $table->date('tgl_pengajuan');
-            $table->boolean('is_approve');
-            $table->date('tgl_approve');
+            $table->boolean('is_approve')->nullable();
+            $table->date('tgl_approve')->nullable();
             $table->foreign('id_trs_pendaftaran_kp')->references('id')->on('trs_pendaftaran_kp');
             $table->foreign('id_mst_mahasiswa')->references('id')->on('mst_mahasiswa');
             $table->foreign('id_mst_media')->references('id')->on('mst_media');
