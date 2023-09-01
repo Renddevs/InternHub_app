@@ -82,3 +82,5 @@ Route::delete('/trsPendaftaranKp/delete/{id}', [TrsPendaftaranKpController::clas
 Route::get('/trsPembayaranKp/verifikasi/{id}', [TrsPembayaranKpController::class, 'verifikasi']);
 
 Route::post('/trsPembayaranKp/uploadBPembayaran', [TrsPembayaranKpController::class, 'UploadBPembayaran']);
+
+Route::post('/trsPembayaranKp/approve', [TrsPembayaranKpController::class, 'Approve']);

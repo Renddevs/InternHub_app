@@ -3,11 +3,9 @@
     use App\Models\TrsPembayaranKp;
     use App\Object\TrsPembayaranKp\CreateTrsPembayaranKpRequest;
     use App\Object\TrsPembayaranKp\TrsPembayaranKpObject;
-    use App\Object\TrsPembayaranKp\UpdateTrsPembayaranKpRequest;
+    use App\Object\TrsPembayaranKp\ApproveTrsPembayaranKpRequest;
     use App\Libraries\ServiceResult;
     use Illuminate\Http\Response;
-    use App\Repositories\RefProdi\IRefProdiRepository;
-    use App\Repositories\User\IUserRepository;
 
     use Exception;
 
@@ -36,6 +34,21 @@
                 $result->Error("Error in TrsPembayaranKpRepository(CreateTrsPembayaranKp) : ".$ex->getMessage());
             }
             
+            return $result;
+        }
+
+        public function Approve(ApproveTrsPembayaranKpRequest $request) : ServiceResult
+        {
+            $result = new ServiceResult();
+            try {
+                $trsPembayaran = TrsPembayaranKp::find($request->id);
+                $trsPembayaran->is_approve = $request->is_approve;
+                $trsPembayaran->tgl_approve = date("Y-m-d h:i:s");
+                $trsPembayaran->save();
+                $result->OK();
+            } catch (Exception $ex) {
+                $result->Error("Error in TrsPembayaranKpRepository(ApproveTrsPembayaranKp) : ".$ex->getMessage());
+            }
             return $result;
         }
     }

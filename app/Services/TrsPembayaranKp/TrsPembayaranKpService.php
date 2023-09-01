@@ -5,6 +5,7 @@
     use App\Repositories\MstMedia\IMstMediaRepository;
     use App\Libraries\ServiceResult;
     use App\Object\TrsPembayaranKp\CreateTrsPembayaranKpRequest;
+    use App\Object\TrsPembayaranKp\ApproveTrsPembayaranKpRequest;
     use App\Object\MstMedia\CreateMstMediaRequest;
     use Illuminate\Http\Request;    
     use Illuminate\Http\Response;
@@ -70,6 +71,18 @@
                 $image->store($folder, "public");
                 DB::commit();
                 $result->OK();
+            } catch (Exception $ex) {
+                $result->Error($ex->getMessage());
+            }
+            return $result;
+        }
+
+        public function Approve(ApproveTrsPembayaranKpRequest $request) : ServiceResult
+        {
+            $result = new ServiceResult();
+            try {
+                $approve = $this->_trsPembayaranKpRepository->Approve($request);
+                return $approve;
             } catch (Exception $ex) {
                 $result->Error($ex->getMessage());
             }

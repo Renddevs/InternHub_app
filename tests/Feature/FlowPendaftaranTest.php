@@ -24,5 +24,14 @@ class FlowPendaftaranTest extends TestCase
         ]);
         $response->assertStatus(200);
     }
+
+    public function test_approve_pembayaran_kp(): void
+    {
+        $response = $this->post('/api/trsPembayaranKp/approve', [
+            'id' => "9BC9FE73-D533-44DA-97A3-00953281ED6F",
+            'is_approve' => 1,
+        ]);
+        $response->assertStatus(200);
+    }
     
 }
