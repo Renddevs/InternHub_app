@@ -12,6 +12,7 @@ use App\Http\Controllers\MstMahasiswaController;
 use App\Http\Controllers\TrsPendaftaranKpController;
 use App\Http\Controllers\TrsPembayaranKpController;
 use App\Http\Controllers\TrsDosenPembimbingController;
+use App\Http\Controllers\TrsBimbinganKpController;
 
 use App\Http\Controllers\MstMediaController;
 
@@ -87,3 +88,7 @@ Route::post('/trsPembayaranKp/uploadBPembayaran', [TrsPembayaranKpController::cl
 Route::post('/trsPembayaranKp/approve', [TrsPembayaranKpController::class, 'Approve']);
 
 Route::post('/trsDosenPembimbing/PDosenPembimbing', [TrsDosenPembimbingController::class, 'PDosenPembimbing']);
+
+Route::post('/trsBimbinganKp/create', [TrsBimbinganKpController::class, 'Create']);
+
+Route::post('/trsBimbinganKp/approve', [TrsBimbinganKpController::class, 'Approve']);

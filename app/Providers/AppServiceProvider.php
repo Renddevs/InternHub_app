@@ -21,6 +21,8 @@ use App\Repositories\TrsPembayaranKp\ITrsPembayaranKpRepository;
 use App\Repositories\TrsPembayaranKp\TrsPembayaranKpRepository;
 use App\Repositories\TrsDosenPembimbing\ITrsDosenPembimbingRepository;
 use App\Repositories\TrsDosenPembimbing\TrsDosenPembimbingRepository;
+use App\Repositories\TrsBimbinganKp\ITrsBimbinganKpRepository;
+use App\Repositories\TrsBimbinganKp\TrsBimbinganKpRepository;
 use App\Repositories\MstMedia\IMstMediaRepository;
 use App\Repositories\MstMedia\MstMediaRepository;
 use App\Services\RefRole\IRefRoleService;
@@ -39,6 +41,8 @@ use App\Services\TrsPembayaranKp\ITrsPembayaranKpService;
 use App\Services\TrsPembayaranKp\TrsPembayaranKpService;
 use App\Services\TrsDosenPembimbing\ITrsDosenPembimbingService;
 use App\Services\TrsDosenPembimbing\TrsDosenPembimbingService;
+use App\Services\TrsBimbinganKp\ITrsBimbinganKpService;
+use App\Services\TrsBimbinganKp\TrsBimbinganKpService;
 use App\Helpers\FileHelper\IFileHelper;
 use App\Helpers\FileHelper\FileHelper;
 
@@ -63,6 +67,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IMstMediaRepository::class,MstMediaRepository::class);
         $this->app->bind(ITrsPembayaranKpRepository::class,TrsPembayaranKpRepository::class);
         $this->app->bind(ITrsDosenPembimbingRepository::class,TrsDosenPembimbingRepository::class);
+        $this->app->bind(ITrsBimbinganKpRepository::class,TrsBimbinganKpRepository::class);
         // Repository
 
         // Service
@@ -75,6 +80,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(IMstMediaService::class,MstMediaService::class);
         $this->app->bind(ITrsPembayaranKpService::class,TrsPembayaranKpService::class);
         $this->app->bind(ITrsDosenPembimbingService::class,TrsDosenPembimbingService::class);
+        $this->app->bind(ITrsBimbinganKpService::class,TrsBimbinganKpService::class);
         // Service
     }
 
