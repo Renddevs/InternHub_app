@@ -13,6 +13,7 @@ use App\Http\Controllers\TrsPendaftaranKpController;
 use App\Http\Controllers\TrsPembayaranKpController;
 use App\Http\Controllers\TrsDosenPembimbingController;
 use App\Http\Controllers\TrsBimbinganKpController;
+use App\Http\Controllers\TrsPengajuanTkpController;
 
 use App\Http\Controllers\MstMediaController;
 
@@ -92,3 +93,5 @@ Route::post('/trsDosenPembimbing/PDosenPembimbing', [TrsDosenPembimbingControlle
 Route::post('/trsBimbinganKp/create', [TrsBimbinganKpController::class, 'Create']);
 
 Route::post('/trsBimbinganKp/approve', [TrsBimbinganKpController::class, 'Approve']);
+
+Route::post('/trsPengajuanTkp/create', [TrsPengajuanTkpController::class, 'Create']);

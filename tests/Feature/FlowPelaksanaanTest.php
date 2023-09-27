@@ -11,6 +11,20 @@ class FlowPelaksanaanTest extends TestCase
     /**
      * A basic feature test example.
      */
+    public function test_create_pengajuan_tkp() : void 
+    {
+        $response = $this->post('/api/trsPengajuanTkp/create', [
+            'id_trs_pendaftaran_kp' => "99DB0162-1F51-4767-B552-D21D78D05EBD",
+            'id_mst_mahasiswa' => "99DAD247-FF16-41A0-99EB-829293F473F1",
+            'nama_perusahaan' => "Media Indo Teknologi (MIT)",
+            'nama_penanggung_jawab' => "Agus Panca",
+            'email_perusahaan' => "media@mail.com",
+            'noHp_penanggung_jawab' => "0895128397128",
+            'keterangan' => '-'
+        ]);
+        $response->assertStatus(200);
+    }
+
     public function test_create_bimbingan_kp() : void 
     {
         $response = $this->post('/api/trsBimbinganKp/create', [

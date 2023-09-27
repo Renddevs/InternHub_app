@@ -11,4 +11,5 @@ class TrsPengajuanTkp extends Model
     use HasFactory, HasUuids;
     
     protected $table = 'trs_pengajuan_tkp';
+    public $timestamps = false;
 }
