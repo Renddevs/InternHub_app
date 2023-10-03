@@ -8,6 +8,7 @@
     use App\Object\User\CreateUserRequest;
     use App\Object\User\UpdateUserRequest;
     use App\Object\User\UserObject;
+    use App\Object\User\LoginRespObject;
     use Illuminate\Http\Request;
     use Illuminate\Http\Response;
 
@@ -24,6 +25,18 @@
         {
             $this->_userRepository = $_userRepository;
             $this->_fileHelper = $_fileHelper;
+        }
+
+        public function Login(string $username, string $password){
+            $login = $this->_userRepository->Login($username, $password);
+            $result = new ServiceResult();
+            try {
+                $login = $this->_userRepository->Login($username, $password);
+                return $login;
+            } catch (Exception $ex) {
+                $result->Error("Error UserService(Login) ".$ex->getMessage());
+            }
+            return ["status" => $result];
         }
 
         public function Get(string $id){

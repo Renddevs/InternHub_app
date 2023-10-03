@@ -100,3 +100,10 @@ Route::post('/trsPengajuanTkp/create', [TrsPengajuanTkpController::class, 'Creat
 Route::post('/trsUploadLaporan/uploadPembayaran', [TrsUploadLaporanController::class, 'UploadLaporan']);
 
 Route::post('/trsUploadLaporan/approve', [TrsUploadLaporanController::class, 'Approve']);
+
+Route::post('/user/login', [UserController::class, 'Login']);
+
+
+Route::middleware('auth:sanctum')->group( function () {
+    Route::get('/refProdi/get/{id}', [RefProdiController::class, 'Get']);
+});

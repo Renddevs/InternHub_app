@@ -5,6 +5,6 @@
     {
         public string $id_role;
         public string $username;
-        public string $passwrod;
+        public string $password;
     }
 ?>

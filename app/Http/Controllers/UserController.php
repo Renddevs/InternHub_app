@@ -16,6 +16,11 @@ class UserController extends Controller
         $this->_userService = $_userService;
     }
 
+    public function Login(Request $request){
+        $result = $this->_userService->Login($request->username, $request->password);
+        return response()->json($result, $result["status"]->code);
+    }
+
     public function Get(string $id){
         $result = $this->_userService->Get($id);
         return response()->json($result, $result["status"]->code);

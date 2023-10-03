@@ -20,6 +20,7 @@ return new class extends Migration
             $table->datetime('created_at');
             $table->string('update_by')->nullable();
             $table->datetime('updated_at')->nullable();
+            $table->rememberToken();
             $table->foreign('id_role')->references('id')->on('ref_role')->onDelete('cascade'); 
         });
     }

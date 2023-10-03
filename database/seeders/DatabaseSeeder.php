@@ -41,9 +41,9 @@ class DatabaseSeeder extends Seeder
             'created_at' => date("Y-m-d h:i:s")
         ]);
 
-        $id_ref_role_dosen = Str::uuid();
+        $id_ref_role_mahasiswa = Str::uuid();
         DB::table('ref_role')->insert([
-            'id' => $id_ref_role_dosen,
+            'id' => $id_ref_role_mahasiswa,
             'name' => "Mahasiswa",
             'is_active' => 1,
             'create_by' => "SYSTEM",

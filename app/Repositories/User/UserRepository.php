@@ -7,8 +7,10 @@
     use App\Libraries\ServiceResult;
     use Illuminate\Http\Response;
     use App\Repositories\RefRole\IRefRoleRepository;
+    use Illuminate\Support\Facades\Auth;
 
     use Exception;
+use PhpParser\Node\Stmt\TryCatch;
 
     class UserRepository implements IUserRepository
     {
@@ -19,6 +21,20 @@
         {
             $this->model = $model;
             $this->_refRoleRepository = $_refRoleRepository;
+        }
+
+        public function Login(string $username, string $password)
+        {
+            $result = new ServiceResult();
+            $data = null;
+            try {
+                $user = User::where('username', $username)->firstOrFail();
+                $data["token"] =  $user->createToken('auth_token')->plainTextToken;
+                $result->OK();
+            } catch (Exception $ex) {
+                $result->Error("Error UserRepository(Login)".$ex->getMessage());
+            }
+            return ["data" => $data, "status" => $result];
         }
 
         public function Get(string $id){
@@ -43,7 +59,7 @@
                 $user = new User;
                 $user->id_role = $request->id_role;
                 $user->username = $request->username;
-                $user->password = $request->password;
+                $user->password = bcrypt($request->password);
                 $user->create_by = "SYSTEM";
                 $user->created_at = date("Y-m-d h:i:s");
                 $user->save();
@@ -75,7 +91,7 @@
         {
             $result = new ServiceResult();
             try {
-                $user = User::find($request->id);
+                $user = User::find($id);
                 $user->delete();
                 $result->OK();
             } catch (Exception $ex) {

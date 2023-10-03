@@ -7,6 +7,7 @@
     use App\Object\User\UserObject;
 
     interface IUserRepository{
+        public function Login(string $username, string $password);
         public function Get(string $id);
         public function Create(CreateUserRequest $request) : ServiceResult;
         public function Update(UpdateUserRequest $request) : ServiceResult;
