@@ -7,14 +7,14 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <h4 class="card-title">List Perusahaan</h4>
+                        <h4 class="card-title">Detail Tempat Kerja Praktek</h4>
                     </div>
-                    <div class="col-md-6 col-sm-12 d-flex justify-content-end">
+                    {{-- <div class="col-md-6 col-sm-12 d-flex justify-content-end">
                         <button class="btn btn-sm btn-primary font-weight-bold" style="" onclick="showMdlTambahTempat()"><span style="font-size: 20px;">+</span> Tambah</button>
-                    </div>
+                    </div> --}}
                 </div>
-                <p class="card-description">Daftar perusahaan yang diajukan sebagai tempat kerja praktek.</p>
-                <div class="table-responsive">
+                <p class="card-description">Informasi tempat/perusahaan yang diajukan sebagai tempat kerja praktek.</p>
+                {{-- <div class="table-responsive">
                     <table id="" class="display expandable-table" style="width: 100%;" role="grid">
                         <thead>
                             <tr role="row">
@@ -33,6 +33,55 @@
                             </tr>
                         </tbody>
                     </table>
+                </div> --}}
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="">Nama Perusahaan</label>
+                            <input type="text" class="form-control form-control-sm" id="" placeholder="Nama Perusahaan">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="">Penanggung Jawab</label>
+                            <input type="text" class="form-control form-control-sm" id="" placeholder="Penanggung Jawab">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" class="form-control form-control-sm" id="" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="">No Telp</label>
+                            <input type="text" class="form-control form-control-sm" id="" placeholder="No Telp">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Alamat</label>
+                            <textarea class="form-control" placeholder="Alamat"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Keterangan</label>
+                            <textarea class="form-control" placeholder="Keterangan"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12 d-flex justify-content-end">
+                        <button class="btn btn-md btn-primary">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,20 +91,13 @@
           <div class="card-body">
             <h4 class="card-title">Upload Surat Balasan Perusahaan</h4>
             <p class="card-description">
-              Setelah mendapatkan surat balasan permohonan kerja praktek, pilih dan upload file surat pada perusahaan yang bersangkutan.
+              Setelah mendapatkan surat balasan permohonan kerja praktek, upload file surat balasan dari perusahaan yang bersangkutan.
             </p>
             <div class="row">
-                <div class="col-md-3 col-sm-12">
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect3">Perusahaan</label>
-                        <select class="form-control form-control-sm">
-                        </select>
-                    </div>
-                </div>
                 <div class="col-md-4 col-sm-12">
                     <div class="form-group">
                         <label for="exampleFormControlSelect3">Attachment</label>
-                        <input type="file" class="form-control form-control-sm">
+                        <input type="file" class="form-control">
                     </div>
                 </div>
             </div>

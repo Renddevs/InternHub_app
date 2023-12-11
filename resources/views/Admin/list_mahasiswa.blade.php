@@ -5,8 +5,8 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">List Pembayaran</h4>
-                <p class="card-description">Daftar bukti pembayaran yang diupload calon peserta kerja praktek.</p>
+                <h4 class="card-title">List Dosen Pembimbing</h4>
+                {{-- <p class="card-description">Daft</p> --}}
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
@@ -42,64 +42,24 @@
                         <thead>
                             <tr role="row">
                                 <th aria-label="#">#</th>
-                                <th>Nama Mahasiswa</th>
                                 <th>NPM</th>
-                                <th>Prodi</th>
-                                <th>Bukti Pembayaran</th>
-                                <th>Tanggal Pembayaran</th>
-                                <th>Status</th>
+                                <th>Nama Lengkap</th>
+                                <th>Program Studi</th>
                                 <th class="text-center">#</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="text-center">1</td>
-                                <td class="">Rendy Praseptya Nugraha</td>
-                                <td class=""><strong>19111037</strong></td>
-                                <td>Informatika</td>
-                                <td><a href="#">scr_transfer.jpg</a></td>
-                                <td class="text-center">09-10-2023</td>
-                                <td><span class="badge badge-light">Waiting Approve</span></td>
+                                <td class="">19111037</td>
+                                <td>Rendy Praseptya Nugraha</td>
+                                <td class="">Informatika</td>
                                 <td class="text-center"><div class="btn-group" role="group">
                                     <button id="btnGroupDrop1" type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       Action
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                      <a class="dropdown-item btn btn-sm" href="#" onclick="showMdlDetailPembayaran()">Detail</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">2</td>
-                                <td class="">Frenty Syari</td>
-                                <td class=""><strong>19111038</strong></td>
-                                <td>Radiologi</td>
-                                <td><a href="#">liv*n_transfer.jpg</a></td>
-                                <td class="text-center">12-10-2023</td>
-                                <td><span class="badge badge-success">Approved</span></td>
-                                <td class="text-center"><div class="btn-group" role="group">
-                                    <button id="" type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Action
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="">
-                                      <a class="dropdown-item btn btn-sm" href="#">Detail</a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">3</td>
-                                <td class="">M Zidane Zovanka</td>
-                                <td class=""><strong>19111039</strong></td>
-                                <td>Informatika</td>
-                                <td><a href="#">b*i_transfer.jpg</a></td>
-                                <td class="text-center">15-10-2023</td>
-                                <td><span class="badge badge-danger">Reject</span></td>
-                                <td class="text-center"><div class="btn-group" role="group">
-                                    <button id="" type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Action
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="">
-                                      <a class="dropdown-item btn btn-sm" href="#">Detail</a>
+                                      {{-- <a class="dropdown-item btn btn-sm" href="#" onclick="showMdlDetailPembayaran()">Detail</a> --}}
                                     </div>
                                 </td>
                             </tr>
@@ -128,8 +88,8 @@
 </div>
 @endsection
 
-@include('Admin.Modal._mdl_detail_pembayaran')
+
 
 @section('javascript_section')
-<script src="{{ asset('page/Admin/app_pembayaran.js') }}"></script>
+
 @endsection

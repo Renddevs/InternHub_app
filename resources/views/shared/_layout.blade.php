@@ -309,9 +309,39 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/bimbingan_m">
+              <i class="icon-align-right menu-icon"></i>
+              <span class="menu-title">Bimbingan</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/laporan_m">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Laporan</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/app_pembayaran_page">
               <i class="icon-book menu-icon"></i>
               <span class="menu-title">Approve Pembayaran</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/l_kegiatan_kp">
+              <i class="icon-align-left menu-icon"></i>
+              <span class="menu-title">Agenda Kerja Praktek</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/l_dosen_pembimbing">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Dosen Pembimbing</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/l_mahasiswa">
+              <i class="icon-paper menu-icon"></i>
+              <span class="menu-title">Mahasiswa</span>
             </a>
           </li>
         </ul>

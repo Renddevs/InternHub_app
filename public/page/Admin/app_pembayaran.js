@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    showMdlDetailPembayaran();
+    // showMdlDetailPembayaran();
 });
 
 function showMdlDetailPembayaran(){

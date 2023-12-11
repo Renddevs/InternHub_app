@@ -36,3 +36,23 @@ Route::get('/tambah_tempat_kp_page', function(){
 Route::get('/app_pembayaran_page', function(){
     return view('admin.app_pembayaran');
 });
+
+Route::get('/bimbingan_m', function(){
+    return view('mahasiswa.bimbingan_mahasiswa');
+});
+
+Route::get('/laporan_m', function(){
+    return view('mahasiswa.laporan_mahasiswa');
+});
+
+Route::get('/l_kegiatan_kp', function(){
+    return view('admin.list_kegiatan_kp');
+});
+
+Route::get('/l_dosen_pembimbing', function(){
+    return view('admin.list_dosen_pembimbing');
+});
+
+Route::get('/l_mahasiswa', function(){
+    return view('admin.list_mahasiswa');
+});

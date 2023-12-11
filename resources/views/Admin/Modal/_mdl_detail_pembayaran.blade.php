@@ -1,11 +1,13 @@
 <div class="modal fade" id="mdl_detail_pembayaran" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Detail Pembayaran</h5>
-            </div>
             <div class="modal-body">
                 <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="modal-title" id="exampleModalLabel">Detail Pembayaran</h4>
+                    </div>
+                </div>
+                <div class="row mt-4">
                     <div class="col-md-6 col-sm-12">
                       <address>
                         <p>Nama</p>
@@ -35,12 +37,12 @@
                         <textarea class="form-control form-control-md" placeholder="Keterangan"></textarea>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col-md-6 col-sm-12">
-                        <button class="btn btn-md btn-success w-100">Approve</button>
+                <div class="row d-flex justify-content-end mt-5">
+                    <div class="col-md-3 col-sm-12">
+                        <button class="btn btn-sm btn-success w-100">Approve</button>
                     </div>
-                    <div class="col-md-6 col-sm-12">
-                        <button class="btn btn-md btn-danger w-100">Tolak</button>
+                    <div class="col-md-3 col-sm-12">
+                        <button class="btn btn-sm btn-danger w-100">Tolak</button>
                     </div>
                 </div>
             </div>
